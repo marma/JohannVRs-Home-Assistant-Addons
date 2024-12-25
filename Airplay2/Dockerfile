@@ -33,7 +33,8 @@ FROM debian:bookworm-slim
 RUN apt update
 RUN apt -y install --no-install-recommends systemd avahi-daemon \
     xxd supervisor jq mosquitto libavcodec-dev libsodium-dev \
-    libplist-dev libpulse-dev libavahi-client-dev libconfig-dev libpopt-dev
+    libplist-dev libpulse-dev libavahi-client-dev libconfig-dev libpopt-dev \
+    libasound2-plugins
 
 COPY --from=builder /usr/local/bin/shairport-sync /usr/local/bin/shairport-sync
 #COPY --from=builder /usr/local/share/man/man7 /usr/share/man/man7
